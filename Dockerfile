@@ -9,6 +9,7 @@ RUN apt-get update && \
 			libjpeg-dev \
 			rsync \
 			openssh-client \
+			mysql-client \
 	&& rm -rf /var/lib/apt/lists/*
 
 ENV COMPOSER_HOME /composer
