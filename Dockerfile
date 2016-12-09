@@ -1,4 +1,4 @@
-FROM nimmis/apache-php5
+FROM php:5.5.38-apache
 
 MAINTAINER Neil Giarratana <neil@neilsmind.com>
 
@@ -10,7 +10,12 @@ RUN apt-get update && \
 			rsync \
 			openssh-client \
 			mysql-client \
+			git \
+			zip \
 	&& rm -rf /var/lib/apt/lists/*
+
+RUN cd /tmp && curl -sS https://getcomposer.org/installer | \
+		php && mv composer.phar /usr/local/bin/composer
 
 ENV COMPOSER_HOME /composer
 ENV PATH /composer/vendor/bin:$PATH
