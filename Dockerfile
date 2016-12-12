@@ -2,6 +2,8 @@ FROM php:5.5.38-apache
 
 MAINTAINER Neil Giarratana <neil@neilsmind.com>
 
+RUN a2enmod rewrite
+
 # install the PHP extensions we need
 RUN apt-get update && \
 	  apt-get install -y \
