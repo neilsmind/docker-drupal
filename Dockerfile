@@ -9,6 +9,7 @@ RUN apt-get update && \
 			libjpeg-dev \
 			rsync \
 			openssh-client \
+			php5-mysql \
 			mysql-client \
 			git \
 			zip \
