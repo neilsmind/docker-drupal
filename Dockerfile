@@ -1,4 +1,4 @@
-FROM php:5.5.38-apache
+FROM php:5.6-apache
 
 MAINTAINER Neil Giarratana <neil@neilsmind.com>
 
