@@ -2,6 +2,8 @@ FROM php:5.5.38-apache
 
 MAINTAINER Neil Giarratana <neil@neilsmind.com>
 
+RUN a2enmod rewrite
+
 # install the PHP extensions we need
 RUN apt-get update && \
 	  apt-get install -y \
@@ -9,7 +11,6 @@ RUN apt-get update && \
 			libjpeg-dev \
 			rsync \
 			openssh-client \
-			php5-mysql \
 			mysql-client \
 			git \
 			zip \
@@ -22,7 +23,6 @@ ENV COMPOSER_HOME /composer
 ENV PATH /composer/vendor/bin:$PATH
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
-RUN composer global require drush/drush
-RUN a2enmod rewrite
+RUN composer global require drush/drush:8.1.2
 
 WORKDIR /var/www/html
