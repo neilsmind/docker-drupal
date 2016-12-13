@@ -23,6 +23,6 @@ ENV COMPOSER_HOME /composer
 ENV PATH /composer/vendor/bin:$PATH
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
-RUN composer global require drush/drush:8.1.2
+RUN composer global require drush/drush
 
 WORKDIR /var/www/html
