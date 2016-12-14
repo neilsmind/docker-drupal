@@ -24,6 +24,10 @@ ENV PATH /composer/vendor/bin:$PATH
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
 RUN docker-php-ext-install pdo_mysql
+RUN docker-php-ext-install gd
+RUN docker-php-ext-install zip
+RUN docker-php-ext-install readline
+
 RUN composer global require drush/drush
 
 WORKDIR /var/www/html
