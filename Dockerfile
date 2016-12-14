@@ -14,6 +14,7 @@ RUN apt-get update && \
 			mysql-client \
 			git \
 			zip \
+			php5-gd \
 	&& rm -rf /var/lib/apt/lists/*
 
 RUN cd /tmp && curl -sS https://getcomposer.org/installer | \
